@@ -10,9 +10,9 @@ const Header = ({todos}) => {
     return (
         <header className='header'>
             <h1>Todo list</h1>
-            {todos.length === 0 ? 'there should be your to do list' : <div className="statusBar">
+            <div className="statusBar">
                 {more()} more to do, {done()} done
-            </div>}
+            </div>
         </header>
     );
 };

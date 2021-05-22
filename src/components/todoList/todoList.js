@@ -1,11 +1,25 @@
 import React from 'react';
 import Todo from "../todo";
 
-const TodoList = ({todos, setTodos}) => {
+const TodoList = ({todos, setTodos, status, searchInput}) => {
     return (
         <ul>
-            {todos.map((todo) => {
+            {todos.filter((todo) => {
+                switch (status) {
+                    case 'active':{
+                        return todo.isActive;
+                    }
+                    case 'done':{
+                        return !todo.isActive
+                    }
+                    default:
+                        return todo
+                }
+            }).filter((todo) => {
+                return todo.todoName.includes(searchInput)
+            }).map((todo, idx) => {
                 return <Todo
+                    idx={idx}
                     setTodos={setTodos}
                     name={todo.todoName}
                     todos = {todos}

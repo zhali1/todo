@@ -17,7 +17,7 @@
 }
 
 .app-container {
-    max-width: 400px;
+    max-width: 700px;
     width: 100%;
     background: white;
     border: 1px solid gray;
@@ -56,4 +56,10 @@
 
 .todo-name.important {
     color: red;
+}
+.edit-form{
+    display: none;
+}
+.edit-form.active{
+    display: block;
 }
